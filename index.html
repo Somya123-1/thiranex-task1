@@ -1,105 +1,63 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Somya | Thiranex Portfolio</title>
-    <style>
-        :root {
-            --bg: #ffffff;
-            --text: #1a1a1a;
-            --primary: #6366f1;
-            --card: #f8fafc;
-            --border: #e2e8f0;
-        }
-        
-        [data-theme="dark"] {
-            --bg: #0f172a;
-            --text: #f1f5f9;
-            --primary: #818cf8;
-            --card: #1e293b;
-            --border: #334155;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 2px solid var(--border);
-            margin-bottom: 40px;
-        }
-
-        h1 {
-            color: var(--primary);
-            font-size: 2rem;
-        }
-
-        .theme-toggle {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
-        }
-
-        .theme-toggle:hover {
-            opacity: 0.9;
-            transform: scale(1.05);
-        }
-
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: var(--card);
-            border-radius: 15px;
-            margin-bottom: 40px;
-            border: 1px solid var(--border);
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-        }
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Somya | Thiranex</title>
+<style>
+:root{--bg:#fff;--text:#1a1a1a;--primary:#6366f1;--card:#f8fafc}
+[data-theme="dark"]{--bg:#0f172a;--text:#f1f5f9;--primary:#818cf8;--card:#1e293b}
+*{margin:0;padding:0;box-sizing:border-box;transition:0.3s}
+body{font-family:sans-serif;background:var(--bg);color:var(--text);padding:20px}
+.container{max-width:800px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+h1{color:var(--primary)}
+.theme-toggle{background:var(--primary);color:#fff;border:none;padding:8px 16px;border-radius:20px;cursor:pointer;font-weight:bold}
+.hero{text-align:center;padding:40px 20px;background:var(--card);border-radius:10px;margin-bottom:30px}
+.hero h2{font-size:2rem;margin-bottom:10px;color:var(--primary)}
+.btn{background:var(--primary);color:#fff;padding:10px 20px;border:none;border-radius:20px;cursor:pointer;margin-top:15px}
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.project-card{background:var(--card);padding:15px;border-radius:8px}
+.project-card h3{color:var(--primary);margin-bottom:8px}
+footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #ccc}
+@media(max-width:600px){.projects{grid-template-columns:1fr}header{flex-direction:column;gap:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>Somya.dev</h1>
+<button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+</header>
+<section class="hero">
+<h2>Hi, I'm Somya! 👋</h2>
+<p>Web Developer | Thiranex Intern</p>
+<button class="btn" onclick="alert('Hey Somya! 🎉 Website LIVE hai!')">Click Me!</button>
+</section>
+<h2 style="text-align:center;color:var(--primary);margin-bottom:15px">My Projects</h2>
+<section class="projects">
+<div class="project-card">
+<h3>Thiranex Task 1</h3>
+<p>Responsive portfolio with dark mode. Built with HTML, CSS & JS!</p>
+</div>
+<div class="project-card">
+<h3>Coming Soon</h3>
+<p>Task 2 pe kaam kar rahi hu. Stay tuned!</p>
+</div>
+</section>
+<footer>
+<p>© 2026 Somya | Made in Ballia, UP 🇮🇳</p>
+</footer>
+</div>
+<script>
+function toggleTheme(){
+let b=document.body,t=document.querySelector('.theme-toggle');
+if(b.getAttribute('data-theme')==='dark'){b.removeAttribute('data-theme');t.innerHTML='🌙 Dark';localStorage.setItem('theme','light')}
+else{b.setAttribute('data-theme','dark');t.innerHTML='☀️ Light';localStorage.setItem('theme','dark')}
+}
+if(localStorage.getItem('theme')==='dark'){document.body.setAttribute('data-theme','dark');document.querySelector('.theme-toggle').innerHTML='☀️ Light'}
+</script>
+</body>
+</html>
