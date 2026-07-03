@@ -18,7 +18,8 @@ This is my HTML5 portfolio website created for Thiranex Internship Task 1.
 
 ## How to View
 Open `index.html` in any web browser to view the website.
-
+## Author
+Somya
 ## Author
 Somya
 Thiranex Internship Task 1 - 2026
